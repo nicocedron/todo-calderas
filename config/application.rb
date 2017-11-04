@@ -12,13 +12,7 @@ module TodoCalderas
     config.load_defaults 5.1
 
     config.generators do |g|
-      g.controller_specs false
-      g.routing_specs false
-      g.view_specs   = false
-      g.helper_specs = false
-      g.stylesheets  = false
-      g.javascripts  = false
-      g.helper       = false
+      g.test_framework nil #Disable test generator
     end
 
     # Settings in config/environments/* take precedence over those specified here.

@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/galetahub/ckeditor.git
+  revision: 32bc0c6702388549cb4b3f00f82afbc3798d6891
+  specs:
+    ckeditor (4.2.4)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: https://github.com/nicocedron/rails_admin.git
   revision: 1458a46ece03962afbd9cbaf2e1bde9566daffdf
   specs:
@@ -239,6 +247,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws
+  ckeditor!
   coffee-rails (~> 4.2)
   decent_exposure (= 3.0.2)
   devise (= 4.3.0)
