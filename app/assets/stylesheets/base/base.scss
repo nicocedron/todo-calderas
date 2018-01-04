@@ -1,0 +1,13 @@
+html, body{
+  height: 100%;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  @include rem(font-size, 1.6rem);
+  font-family: $global-font;
+}
+

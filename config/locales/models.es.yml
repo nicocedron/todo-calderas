@@ -1,0 +1,36 @@
+es:
+  activerecord:
+    models:
+      admin:
+        one: 'Administrador'
+        other: 'Administradores'
+      category:
+        one: 'Categoria'
+        other: 'Categorias'
+      post:
+        one: 'Articulo'
+        other: 'Articulos'
+      slide:
+        one: 'Slide'
+        other: 'Slides'
+      asset:
+        one: 'Archivo'
+        other: 'Archivos'
+
+
+    attributes:
+      admin:
+        password: 'Contraseña'
+        sign_in_count: 'Ingresos'
+        last_sign_in_at: 'Ultima vez activo'
+        current_sign_in_at: 'Ingreso actual'
+        current_sign_in_ip: 'IP actual'
+        last_sign_in_ip: 'IP anterior'
+        created_at: 'Creado el'
+        updated_at: 'Actualizado el'
+        current_password: Contraseña actual
+        email: Correo electrónico
+        password: Contraseña
+        password_confirmation: Confirmación de la contraseña
+        remember_me: Recordarme
+

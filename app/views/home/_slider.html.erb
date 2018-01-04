@@ -1,0 +1,21 @@
+<div class="slider">
+  <div class="slides">
+    <% slides.each do |slide| %>
+      <div class="slide" style="background-image: url('<%= slide.image.url(:desktop) %>')">
+        <div class="content">
+          <div class="title">
+            <%= slide.title %>
+          </div>
+          <div class="body">
+            <%= slide.body.html_safe %>
+          </div>
+          <%= link_to 'Ver Más', slide.url, class: 'button green' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="controls">
+    <div class="left"></div>
+    <div class="right"></div>
+  </div>
+</div>

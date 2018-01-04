@@ -1,0 +1,68 @@
+nav {
+  width: 100%;
+
+  @include breakpoint(laptop){
+    float: right;
+    width: auto;
+
+    ul{
+      overflow: hidden;
+    }
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      border-top: 1px solid #f1f1f1;
+
+      &:last-child {
+        border-bottom: 1px solid #f1f1f1;
+      }
+
+      @include breakpoint(laptop){
+        border-top: 2px solid #fff;
+        float: left;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
+        &:hover {
+          border-top: 2px solid #88c6ff;
+        }
+
+        &.active{
+          border-top: 2px solid #0078d9;
+
+          a{
+            &:hover {
+              color: #0078d9;
+              font-weight: normal;
+            }
+          }
+        }
+
+      }
+
+      &.active {
+        a {
+          color: #0078d9;
+          font-weight: normal;
+        }
+      }
+
+      a {
+        padding: 38px 20px;
+        @include rem(font-size, 18px);
+        text-decoration: none;
+        color: #7a8fb8;
+        display: block;
+        font-weight: 300;
+        &:hover {
+          color: #88c6ff;
+        }
+      }
+    }
+  }
+}

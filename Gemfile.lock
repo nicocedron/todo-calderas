@@ -246,7 +246,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws
+  aws (= 2.10.2)
   ckeditor!
   coffee-rails (~> 4.2)
   decent_exposure (= 3.0.2)

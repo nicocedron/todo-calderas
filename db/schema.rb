@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020231302) do
+ActiveRecord::Schema.define(version: 20171105214038) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -64,6 +64,19 @@ ActiveRecord::Schema.define(version: 20171020231302) do
     t.integer "cover_file_size"
     t.datetime "cover_updated_at"
     t.integer "views", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "slides", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "url"
+    t.integer "position", default: 9999
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

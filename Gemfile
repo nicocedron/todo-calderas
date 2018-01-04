@@ -11,11 +11,12 @@ gem 'puma', '~> 3.7'
 # Plugins
 gem 'figaro', '1.1.1'
 gem 'paperclip', '5.1.0'
-gem 'aws'
+gem 'aws', '2.10.2'
 gem 'decent_exposure', '3.0.2'
 gem 'friendly_id', '5.2.3'
 gem 'rails_admin', github: 'nicocedron/rails_admin'
 gem 'devise', '4.3.0'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 #Front end
 gem 'coffee-rails', '~> 4.2'
@@ -38,4 +39,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-gem 'ckeditor', github: 'galetahub/ckeditor'
