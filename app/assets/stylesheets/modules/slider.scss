@@ -8,13 +8,46 @@
       background-size: cover;
       @include rem(min-height, 400px);
 
+      .title{
+        background: rgb(78, 173, 251);
+        padding: 10px 20px;
+        color: rgb(255, 255, 255);
+        @include rem(font-size, 40px);
+        font-weight: 200;
+        font-family: $font1;
+        line-height: 1em;
+        float: left;
+      }//.title
+
       .content{
         position: relative;
         @extend .container;
+        padding: 5% 50px;
+        overflow: hidden;
 
         .body{
+          clear: both;
           @include rem(max-width, 700px);
+          margin-top: 2%;
+          float: left;
+          width: 100%;
+
+          .text{
+            background: rgba(255,255,255,0.8);
+            padding: 10px 20px;
+            @include rem(font-size, 20px);
+            font-weight: 200;
+            line-height: 1.1em;
+            margin-bottom: 10px;
+          }//.text
+
         }//.body
+
+        .button{
+          float: right;
+          margin-bottom: 10px;
+          display: block;
+        }//.button
       }//.content
     }//.slide
   }//.slides
@@ -37,7 +70,7 @@
     }
 
     .right{
-      right: 0;
+      right: 10px;
 
       &:before{
         content: ">";
@@ -45,7 +78,7 @@
     }
 
     .left{
-      left: 0;
+      left: 10px;
       &:before{
         content: "<";
       }

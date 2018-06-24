@@ -1,3 +1,7 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
 html, body{
   height: 100%;
 }
@@ -11,3 +15,6 @@ body{
   font-family: $global-font;
 }
 
+p{
+  margin: 1em 0;
+}

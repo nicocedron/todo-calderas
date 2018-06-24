@@ -1,0 +1,15 @@
+<div class="l-posts">
+  <% posts.each do |post| %>
+    <div class="post-mini" style="background-image: url('<%= post.cover.url(:desktop) %>')">
+      <div class="content">
+        <div class="title">
+          <%= post.title %>
+        </div>
+        <div class="body">
+          <%= post.description.html_safe %>
+        </div>
+        <%= link_to 'Ver Más', '#', class: 'button green' %>
+      </div>
+    </div>
+  <% end %>
+</div>

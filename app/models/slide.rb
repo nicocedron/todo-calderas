@@ -1,5 +1,6 @@
 class Slide < ApplicationRecord
   scope :ordered, -> { order(position: :asc) }
+
   has_attached_file :image, default_url: "/img/slider/:style/missing.jpg",
                     styles: {
                       desktop: '1200x400>',
