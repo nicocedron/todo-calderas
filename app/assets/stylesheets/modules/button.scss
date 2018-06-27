@@ -17,6 +17,10 @@
   vertical-align: middle;
   line-height: 100%;
 
+  &.big{
+    @include rem(font-size, 32px);
+  }
+
   &:hover{
     background: #FFFFFF;
   }

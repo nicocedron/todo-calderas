@@ -21,6 +21,9 @@ class Post < ApplicationRecord
       end
     end
 
+    list do
+      exclude_fields :body
+    end
   end
 
 end

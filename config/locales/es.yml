@@ -3,3 +3,7 @@ es:
     menu:
       home: 'Inicio'
       articles: 'Articulos'
+  home:
+    articles:
+      title: 'Artículos Recientes'
+      view-more: 'Ver Más'

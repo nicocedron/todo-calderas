@@ -18,3 +18,19 @@ body{
 p{
   margin: 1em 0;
 }
+
+h2.title{
+  color: $primary;
+  @include rem(font-size, 32px);
+  font-weight: 300;
+  margin: 20px 0;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.padding-base{
+  padding-left: 15px;
+  padding-right: 15px;
+}

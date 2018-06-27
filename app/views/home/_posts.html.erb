@@ -1,15 +1,31 @@
 <div class="l-posts">
-  <% posts.each do |post| %>
-    <div class="post-mini" style="background-image: url('<%= post.cover.url(:desktop) %>')">
-      <div class="content">
-        <div class="title">
-          <%= post.title %>
-        </div>
-        <div class="body">
-          <%= post.description.html_safe %>
-        </div>
-        <%= link_to 'Ver Más', '#', class: 'button green' %>
+  <h2 class="title">
+    <%= t('home.articles.title') %>
+  </h2>
+
+  <div class="row">
+    <% posts.each do |post| %>
+      <div class="col-50">
+        <a href="#" class="post-mini">
+          <div class="background" style="background-image: url('<%= post.cover.url(:desktop) %>')"></div>
+          <div class="content">
+            <div class="title">
+              <%= post.title.titleize %>
+            </div>
+
+            <div class="body">
+              <%= post.description %>
+            </div>
+
+          </div>
+        </a>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
+
+  <div class="center-text">
+    <a href="" class="button green big">
+      <%= t('home.articles.view-more') %>
+    </a>
+  </div>
 </div>
