@@ -15,9 +15,10 @@
   }
 
   .background{
-    padding-bottom: 56%;
+    padding-bottom: 56.25%;
     background-size: cover;
     box-shadow: 0 0 63px #e0e0e0 inset;
+    background-position: center center;
   }
 
   .content{
@@ -29,6 +30,7 @@
       margin-bottom: 20px;
       font-weight: 700;
       color: $primary;
+      text-transform: capitalize;
     }
 
     .body{

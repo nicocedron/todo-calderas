@@ -26,6 +26,8 @@ class Importer::Posts < Importer::Base
       record.cover = image
     end
 
+    record.body.gsub! '/navegador/', 'http://assets.todocalderas.com.ar/'
+
     class_name.create( record.to_h )
   end
 end

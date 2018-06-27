@@ -1,11 +1,14 @@
 class Post < ApplicationRecord
-  scope :ordered, -> { order(published_at: :desc) }
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
+  scope :ordered,   -> { order(published_at: :desc) }
   scope :published, -> { where(draft: false).where('published_at < ?', Time.zone.now) }
 
-  has_attached_file :cover, default_url: "/images/:style/missing.png", styles: {
-                      desktop: '1200x400>',
-                      tablet:  '720x400>',
-                      mobile:  '600x400>'
+  has_attached_file :cover, default_url: "/img/post/:style/missing.jpg", styles: {
+                      desktop: '1200x675>',
+                      tablet:  '768x432>',
+                      mobile:  '400x225>'
                     }
 
   has_and_belongs_to_many :categories
@@ -13,6 +16,7 @@ class Post < ApplicationRecord
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
   validates :categories, :title, :body, :description, presence: true
 
+  #Rails Admin
   rails_admin do
     configure :body, :ck_editor
     configure :published_at do

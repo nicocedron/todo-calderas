@@ -1,0 +1,13 @@
+<a href="<%= article_path(post.slug) %>" class="post-mini">
+  <div class="background" style="background-image: url('<%= post.cover.url(:mobile) %>')"></div>
+  <div class="content">
+    <div class="title">
+      <%= post.title %>
+    </div>
+
+    <div class="body">
+      <%= post.description %>
+    </div>
+
+  </div>
+</a>

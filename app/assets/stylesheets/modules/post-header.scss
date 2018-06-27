@@ -1,0 +1,36 @@
+.post-header{
+  padding-top: 250px;
+  text-align: center;
+  position: relative;
+
+  .background{
+    webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    -ms-filter: grayscale(1);
+    filter: grayscale(1);
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &:after, .background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(62, 174, 255, 0.7);
+    content: "";
+  }
+
+  h1.post-title{
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 20px;
+    background: $white;
+    margin: 0;
+    color: $primary;
+  }
+}

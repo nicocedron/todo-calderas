@@ -7,3 +7,11 @@ es:
     articles:
       title: 'Artículos Recientes'
       view-more: 'Ver Más'
+  routes:
+    articles:
+      path: 'articulos'
+
+  articles:
+    title: 'Artículos'
+
+

@@ -1,6 +1,7 @@
-<div class="l-posts">
+<div class="container padding-base">
+  <div class="l-posts">
   <h2 class="title">
-    <%= t('home.articles.title') %>
+    <%= t('articles.title') %>
   </h2>
 
   <div class="row">
@@ -12,8 +13,8 @@
   </div>
 
   <div class="center-text">
-    <a href="<%= articles_path %>" class="button green big">
-      <%= t('home.articles.view-more') %>
-    </a>
+    <%= paginate posts, window: 5 %>
   </div>
+</div>
+
 </div>

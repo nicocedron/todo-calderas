@@ -17,6 +17,7 @@ gem 'friendly_id', '5.2.3'
 gem 'rails_admin', github: 'nicocedron/rails_admin'
 gem 'devise', '4.3.0'
 gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'kaminari'
 
 #Front end
 gem 'coffee-rails', '~> 4.2'

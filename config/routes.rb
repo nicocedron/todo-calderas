@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  #Admin
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
@@ -6,9 +8,8 @@ Rails.application.routes.draw do
     mount Ckeditor::Engine => '/ckeditor'
   end
 
+  #Web
+  resources :articles, only: [:index, :show], path: I18n.t('routes.articles.path')
   root 'home#index'
 
-  resources :articles, only: [:index, :show]
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

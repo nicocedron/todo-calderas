@@ -1,0 +1,25 @@
+.pagination {
+  display: inline-block;
+
+  .page a, .next a, .prev a{
+    color: $primary;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  .page.current {
+    float: left;
+    padding: 8px 16px;
+    background-color: $primary;
+    color: $white;
+    border-radius: 5px;
+  }
+
+  a:hover:not(.active) {
+    background-color: $light;
+    border-radius: 5px;
+  }
+
+  .last,.first{display: none}
+}
