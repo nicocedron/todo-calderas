@@ -1,4 +1,9 @@
 .post-body{
   margin: 20px 0;
   line-height: 1.5em;
+
+  img{
+    max-width: 100% !important;
+    height: auto !important;
+  }
 }
