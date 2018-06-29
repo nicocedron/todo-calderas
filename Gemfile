@@ -11,7 +11,7 @@ gem 'puma', '~> 3.7'
 # Plugins
 gem 'figaro', '1.1.1'
 gem 'paperclip', '5.1.0'
-gem 'aws', '2.10.2'
+gem 'aws-sdk', '>=2.0.0'
 gem 'decent_exposure', '3.0.2'
 gem 'friendly_id', '5.2.3'
 gem 'rails_admin', github: 'nicocedron/rails_admin'
