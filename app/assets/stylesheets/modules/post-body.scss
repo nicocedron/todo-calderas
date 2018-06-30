@@ -4,6 +4,9 @@
 
   img, iframe, video, canvas{
     max-width: 100% !important;
+  }
+
+  img{
     height: auto !important;
   }
 }
