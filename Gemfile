@@ -30,6 +30,7 @@ gem 'jquery-rails', '4.3.1'
 
 group :production, :staging do
   gem 'pg'
+  gem 'heroku-deflater'
 end
 
 group :development, :test do
