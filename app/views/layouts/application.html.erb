@@ -3,8 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo Calderas</title>
     <%= csrf_meta_tags %>
+    <title><%= content_for?(:title) ? yield(:title) : t('home.title') %></title>
+
+    <% if content_for?(:tags) %>
+      <%= yield(:tags) %>
+    <% else %>
+      <meta name="description" content="<%= t('home.description') %>"/>
+      <meta name="og:description" content="<%= t('home.description') %>"/>/>
+      <meta name="og:image" content="<%= image_url 'icon.png' %>"/>
+    <% end %>
+    <meta name="og:site_name" content="<%= t('site-name') %>"/>
+    <meta name="fb:page_id" content="<%= ENV['FB_PAGE_ID'] %>" />
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>

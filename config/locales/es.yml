@@ -1,4 +1,6 @@
 es:
+  site-name: 'Todo Calderas'
+
   header:
     menu:
       home: 'Inicio'
@@ -7,6 +9,14 @@ es:
     articles:
       title: 'Artículos Recientes'
       view-more: 'Ver Más'
+    description: 'Todo tipo de Informacion sobre Calderas. Tipos De Calderas, Caracteristicas, Detalles Generales, Turbinas a Gas, Chimeneas Industriales, Desaireadores...'
+    title: 'Todo Calderas'
+
+  views:
+    articles:
+      index:
+        title: 'Articulos | Todo Calderas'
+
   routes:
     articles:
       path: 'articulos'
