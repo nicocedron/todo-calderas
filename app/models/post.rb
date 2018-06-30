@@ -18,6 +18,8 @@ class Post < ApplicationRecord
 
   #Rails Admin
   rails_admin do
+    exclude_fields :slug
+
     configure :body, :ck_editor
     configure :published_at do
       strftime_format do
