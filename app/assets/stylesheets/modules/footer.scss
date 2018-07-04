@@ -1,0 +1,18 @@
+footer{
+  border-top: 2px solid $light;
+  padding: 20px 0;
+  margin: 40px 0;
+  font-family: $font1;
+  text-align: center;
+  box-shadow: 0 -7px 15px #f0f0f0;
+
+  .website{
+    color: $primary;
+    @include rem(font-size, 20px);
+    margin-bottom: 20px;
+  }
+
+  .author{
+    @include rem(font-size, 18px);
+  }
+}
