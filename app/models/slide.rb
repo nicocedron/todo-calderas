@@ -16,10 +16,4 @@ class Slide < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   validates :title, :body, :url, :position, presence: true
-
-
-  rails_admin do
-    include_all_fields
-    field :body, :ck_editor
-  end
 end

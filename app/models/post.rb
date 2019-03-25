@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  include AdminConfig::Post
   extend FriendlyId
   friendly_id :title, use: :slugged
 
@@ -20,23 +21,4 @@ class Post < ApplicationRecord
 
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
   validates :categories, :title, :body, :description, presence: true
-
-  #Rails Admin
-  rails_admin do
-    configure :body, :ck_editor
-    configure :published_at do
-      strftime_format do
-        '%d-%m-%Y %H:%M:%S'
-      end
-    end
-
-    list do
-      exclude_fields :body
-    end
-
-    edit do
-      exclude_fields :slug
-    end
-  end
-
 end

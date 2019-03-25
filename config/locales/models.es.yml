@@ -1,6 +1,19 @@
+default: &default
+  created_at: 'Creado el'
+  updated_at: 'Actualizado el'
+
 es:
   activerecord:
     models:
+      ckeditor/asset:
+        one: 'Archivo'
+        other: 'Archivos'
+      ckeditor/attachment_file:
+        one: 'Archivo adjunto'
+        other: 'Archivos Adjuntos'
+      ckeditor/picture:
+        one: 'Imagen'
+        other: 'Imagenes'
       admin:
         one: 'Administrador'
         other: 'Administradores'
@@ -19,18 +32,49 @@ es:
 
 
     attributes:
+      ckeditor/asset:
+        <<: *default
+        data: 'Achivo'
+        data_file_name: 'Nombre del archivo'
+        data_content_type: 'Tipo de contenido'
+        data_file_size: 'Tamaño del archivo'
+        data_fingerprint: 'Hulla dactilar'
+        type: 'Tipo'
+        width: 'Ancho'
+        height: 'Alto'
       admin:
+        <<: *default
         password: 'Contraseña'
         sign_in_count: 'Ingresos'
         last_sign_in_at: 'Ultima vez activo'
         current_sign_in_at: 'Ingreso actual'
         current_sign_in_ip: 'IP actual'
         last_sign_in_ip: 'IP anterior'
-        created_at: 'Creado el'
-        updated_at: 'Actualizado el'
         current_password: Contraseña actual
         email: Correo electrónico
         password: Contraseña
         password_confirmation: Confirmación de la contraseña
         remember_me: Recordarme
+      post:
+        <<: *default
+        title: 'Título'
+        body: 'Contenido'
+        description: 'Descripción corta'
+        cover: 'Imagen de portada'
+        views: 'Visitas'
+        draft: 'Guardar como Borrador?'
+        published_at: 'Publicar el'
+        categories: 'Categorias'
+      category:
+        <<: *default
+        name: 'Nombre'
+        posts: 'Articulos'
+      slide:
+        <<: *default
+        title: 'Título'
+        body: 'Contenido'
+        url: 'URL'
+        position: 'Posición'
+        image: 'Imagen'
+
 
