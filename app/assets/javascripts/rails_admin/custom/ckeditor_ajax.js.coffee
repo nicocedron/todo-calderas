@@ -1,4 +1,5 @@
 $(document).ready ->
+  CKEDITOR.timestamp = 'ABCD';
   $(document).on 'mousedown', '.save-action', (e) -> # triggers also when submitting form with enter
     for instance of CKEDITOR.instances
       editor = CKEDITOR.instances[instance]
