@@ -18,7 +18,7 @@ gem 'decent_exposure', '3.0.2'
 gem 'friendly_id', '5.2.3'
 gem 'rails_admin', github: 'nicocedron/rails_admin'
 gem 'devise', '4.3.0'
-gem 'ckeditor', github: 'galetahub/ckeditor', branch: '4-1-stable'
+gem 'ckeditor', github: 'galetahub/ckeditor', tag: 'v4.2.4'
 gem 'kaminari'
 
 #Front end
