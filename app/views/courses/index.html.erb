@@ -1,0 +1,22 @@
+<% content_for :title, t('views.courses.index.title') %>
+
+<div class="container padding-base">
+  <div class="l-posts">
+  <h2 class="title">
+    <%= t('courses.title') %>
+  </h2>
+
+  <div class="row">
+    <% posts.each do |post| %>
+      <div class="col-50">
+        <%= render 'shared/post-mini', post: post %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="center-text">
+    <%= paginate posts, window: 5 %>
+  </div>
+</div>
+
+</div>

@@ -5,6 +5,8 @@ es:
     menu:
       home: 'Inicio'
       articles: 'Articulos'
+      courses: 'Cursos'
+
   home:
     articles:
       title: 'Artículos Recientes'
@@ -16,12 +18,21 @@ es:
     articles:
       index:
         title: 'Articulos | Todo Calderas'
+    courses:
+      index:
+        title: 'Cursos | Todo Calderas'
 
   routes:
     articles:
       path: 'articulos'
 
+    courses:
+      path: 'cursos'
+
   articles:
     title: 'Artículos'
+
+  courses:
+    title: 'Cursos'
 
 
