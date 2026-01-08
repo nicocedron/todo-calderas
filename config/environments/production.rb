@@ -93,20 +93,22 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
-  config.paperclip_defaults = {
-    storage: :s3,
-    url: ':s3_alias_url',
-    path: '/:class/:attachment/:id_partition/:style/:filename',
-    s3_host_alias: ENV.fetch('S3_HOST_NAME'),
-    s3_protocol: ENV.fetch('S3_PROTOCOL').to_sym,
-    s3_headers: { 'Cache-Control' => 'max-age=31536000' },
-    s3_credentials: {
-      bucket: ENV.fetch('S3_BUCKET_NAME'),
-      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-      s3_region: ENV.fetch('AWS_REGION'),
+  if ENV['S3_BUCKET_NAME'].present?
+    config.paperclip_defaults = {
+      storage: :s3,
+      url: ':s3_alias_url',
+      path: '/:class/:attachment/:id_partition/:style/:filename',
+      s3_host_alias: ENV.fetch('S3_HOST_NAME', 's3.amazonaws.com'),
+      s3_protocol: ENV.fetch('S3_PROTOCOL', 'https').to_sym,
+      s3_headers: { 'Cache-Control' => 'max-age=31536000' },
+      s3_credentials: {
+        bucket: ENV['S3_BUCKET_NAME'],
+        access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+        secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+        s3_region: ENV.fetch('AWS_REGION', 'us-east-1'),
+      }
     }
-  }
+  end
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
