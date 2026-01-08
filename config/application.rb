@@ -18,5 +18,8 @@ module TodoCalderas
     config.i18n.default_locale = :es
     config.time_zone = 'Buenos Aires'
 
+    # Add ActionDispatch::Static middleware early
+    config.middleware.use ActionDispatch::Static
+
   end
 end
