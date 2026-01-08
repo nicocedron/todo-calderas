@@ -7,7 +7,8 @@ end
 
 ruby '2.7.8'
 
-gem 'rails', '~> 5.1.2'
+gem 'rails', '~> 5.2.0'
+gem 'nokogiri', '~> 1.13'
 gem 'puma', '~> 3.7'
 
 # Plugins
@@ -16,8 +17,8 @@ gem 'paperclip', '5.1.0'
 gem 'aws-sdk', '>=2.0.0'
 gem 'decent_exposure', '3.0.2'
 gem 'friendly_id', '5.2.3'
-gem 'rails_admin', github: 'nicocedron/rails_admin'
-gem 'devise', '4.3.0'
+gem 'rails_admin'
+gem 'devise'
 gem 'ckeditor', github: 'galetahub/ckeditor', tag: 'v4.2.4'
 gem 'kaminari'
 
