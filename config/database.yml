@@ -12,4 +12,4 @@ test:
   database: db/test.sqlite3
 
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV.fetch('DATABASE_URL', 'sqlite3:db/production.sqlite3') %>
