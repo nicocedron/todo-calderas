@@ -25,6 +25,7 @@ COPY . .
 
 # Set environment to production
 ENV RAILS_ENV production
+ENV SECRET_KEY_BASE dummy-key-for-build
 
 # Precompile assets
 RUN bundle exec rake assets:precompile
