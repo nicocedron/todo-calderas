@@ -21,5 +21,8 @@ module TodoCalderas
     # Add ActionDispatch::Static middleware for compatibility
     config.middleware.use ActionDispatch::Static, Rails.root.join('public').to_s
 
+    # Exclude ckeditor samples from assets precompile to avoid errors
+    config.assets.precompile -= %w(ckeditor/samples/**/*)
+
   end
 end
