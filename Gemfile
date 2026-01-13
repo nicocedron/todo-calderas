@@ -21,6 +21,7 @@ gem 'rails_admin'
 gem 'devise'
 gem 'ckeditor', '4.3.0'
 gem 'kaminari'
+gem 'rack', '~> 2.0.8'
 
 #Front end
 gem 'coffee-rails', '~> 4.2'
