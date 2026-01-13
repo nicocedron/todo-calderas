@@ -1486,7 +1486,7 @@ DEPENDENCIES
   paperclip (= 5.1.0)
   pg
   puma (~> 3.7)
-  rack (~> 2.0.8)
+  rack (~> 2.0.9)
   rails (~> 5.2.0)
   rails_admin
   sass-rails (~> 5.0)
