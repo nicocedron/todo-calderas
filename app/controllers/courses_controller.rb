@@ -1,12 +1,13 @@
 class CoursesController < ApplicationController
-  def index
+  expose :posts, -> {
     category = Category.find_by(name: 'Cursos')
 
-    @posts =
-      if category.present?
-        category.posts.published.ordered.page(params[:page]).per(18)
-      else
-        Post.none
-      end
-  end
+    if category
+      category.posts.published.ordered.page(params[:page]).per(18)
+    else
+      Post.none.page(params[:page]).per(18)
+    end
+  }
+
+  def index; end
 end

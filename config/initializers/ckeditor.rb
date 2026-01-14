@@ -47,7 +47,7 @@ Ckeditor.setup do |config|
   # config.assets_plugins = ['image', 'smiley']
 
   # Disable automatic assets precompile to avoid including unnecessary files
-  #config.assets_precompile = false
+  config.assets_precompile = false
 
   # CKEditor CDN
   # More info here http://cdn.ckeditor.com/
