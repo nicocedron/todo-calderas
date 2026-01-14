@@ -1,1 +1,1 @@
-Admin.create email: 'admin@admin.com', password: 123123123
+Admin.create email: 'admin@admin.com', password: '123123123'
