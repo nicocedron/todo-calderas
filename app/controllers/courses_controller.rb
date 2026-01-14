@@ -3,9 +3,15 @@ class CoursesController < ApplicationController
     category = Category.find_by(name: 'Cursos')
 
     if category
-      category.posts.published.ordered.page(params[:page]).per(18)
+      category.posts
+              .published
+              .ordered
+              .page(params[:page])
+              .per(18)
     else
-      Post.none.page(params[:page]).per(18)
+      Post.none
+          .page(params[:page])
+          .per(18)
     end
   }
 
