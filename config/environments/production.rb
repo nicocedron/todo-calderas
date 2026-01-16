@@ -8,7 +8,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled.
-  config.consider_all_requests_local = true
+  config.consider_all_requests_local = false
 
   # Enable caching.
   config.action_controller.perform_caching = true
