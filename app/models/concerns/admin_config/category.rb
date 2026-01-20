@@ -3,6 +3,17 @@ module AdminConfig::Category
 
   included do
     rails_admin do
+      edit do
+        field :name do
+          required true
+        end
+      end
+
+      list do
+        field :name
+        field :created_at
+      end
+
       field :posts do
         visible false
       end
