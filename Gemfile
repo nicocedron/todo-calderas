@@ -21,6 +21,7 @@ gem 'rails_admin'
 gem 'devise'
 gem 'ckeditor', '4.3.0'
 gem 'kaminari'
+gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rack', '~> 2.0.9'
 
 #Front end

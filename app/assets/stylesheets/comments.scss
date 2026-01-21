@@ -1,0 +1,70 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.l-comments {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+
+  .comment {
+    margin-bottom: 20px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+    }
+
+    p {
+      margin: 0 0 10px 0;
+    }
+
+    small {
+      color: #999;
+    }
+  }
+
+  h3 {
+    margin-top: 30px;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    textarea.form-control {
+      height: 100px;
+    }
+  }
+
+  .button {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background: #218838;
+    }
+  }
+}
