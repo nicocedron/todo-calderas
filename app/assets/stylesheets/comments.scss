@@ -1,133 +1,171 @@
-// Place all the styles related to the Comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .l-comments {
-  margin-top: 40px;
-  padding: 30px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
 
   h2 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
     text-align: center;
-  }
-
-  .comment {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    position: relative;
-
-    .comment-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-
-      h4 {
-        margin: 0;
-        color: #007bff;
-        font-size: 1.1rem;
-      }
-
-      .comment-meta {
-        font-size: 0.9rem;
-        color: #666;
-      }
-    }
-
-    p {
-      margin: 0 0 15px 0;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    .delete-link {
-      align-self: flex-end;
-      color: #dc3545;
-      text-decoration: none;
-      font-size: 0.9rem;
-
-      &:hover {
-        color: #c82333;
-      }
-    }
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #1f2937;
   }
 
   h3 {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 1.5rem;
     text-align: center;
+    margin: 60px 0 25px;
+    font-size: 1.6rem;
+    color: #1f2937;
+  }
+}
+
+/* LISTADO */
+.comments-list {
+  display: grid;
+  gap: 24px;
+}
+
+/* CARD */
+.comment {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 24px 26px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+}
+
+/* HEADER */
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 14px;
+}
+
+/* AVATAR */
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #22c55e);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* AUTOR */
+.author {
+  flex: 1;
+
+  h4 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #111827;
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: #6b7280;
+  }
+}
+
+/* DELETE */
+.delete-link {
+  font-size: 0.85rem;
+  color: #ef4444;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* FORM */
+.comment-form {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #22c55e;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+    }
+  }
+
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+}
+
+/* BOTÓN */
+.button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(34, 197, 94, 0.35);
+  }
+}
+
+/* RECAPTCHA */
+.recaptcha-container {
+  margin-bottom: 20px;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .comment {
+    padding: 20px;
   }
 
   .comment-form {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-
-    .form-group {
-      margin-bottom: 20px;
-
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #333;
-      }
-
-      .form-control {
-        width: 100%;
-        padding: 12px;
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: border-color 0.3s;
-
-        &:focus {
-          outline: none;
-          border-color: #007bff;
-          box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
-        }
-      }
-
-      textarea.form-control {
-        height: 120px;
-        resize: vertical;
-      }
-    }
-
-    .recaptcha-container {
-      margin-bottom: 20px;
-    }
-
-    .button {
-      display: block;
-      width: 100%;
-      padding: 12px;
-      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-
-      &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
-      }
-    }
+    padding: 24px;
   }
 }
