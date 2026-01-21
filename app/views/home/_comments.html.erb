@@ -1,31 +1,40 @@
 <div class="l-comments">
-  <h2 class="title">Comentarios</h2>
+  <h2>Comentarios</h2>
 
   <% Comment.all.each do |comment| %>
     <div class="comment">
-      <h4><%= comment.name %> (<%= comment.email %>)</h4>
+      <div class="comment-header">
+        <h4><%= comment.name %> (<%= comment.email %>)</h4>
+        <div class="comment-meta">
+          <%= comment.created_at.strftime('%d/%m/%Y %H:%M') %>
+          <% if admin_signed_in? %>
+            <%= link_to 'Eliminar', comment_path(comment), method: :delete, data: { confirm: '¿Estás seguro de que quieres eliminar este comentario?' }, class: 'delete-link' %>
+          <% end %>
+        </div>
+      </div>
       <p><%= comment.body %></p>
-      <small><%= comment.created_at.strftime('%d/%m/%Y %H:%M') %></small>
     </div>
   <% end %>
 
   <h3>Deja tu comentario</h3>
-  <%= form_for Comment.new, url: comments_path do |f| %>
-    <div class="form-group">
-      <%= f.label :name, 'Nombre' %>
-      <%= f.text_field :name, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :email, 'Email' %>
-      <%= f.email_field :email, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :body, 'Comentario' %>
-      <%= f.text_area :body, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= recaptcha_tags %>
-    </div>
-    <%= f.submit 'Enviar', class: 'button green' %>
-  <% end %>
+  <div class="comment-form">
+    <%= form_for Comment.new, url: comments_path do |f| %>
+      <div class="form-group">
+        <%= f.label :name, 'Nombre' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, 'Email' %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body, 'Comentario' %>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+      <div class="form-group recaptcha-container">
+        <%= recaptcha_tags %>
+      </div>
+      <%= f.submit 'Enviar', class: 'button' %>
+    <% end %>
+  </div>
 </div>
