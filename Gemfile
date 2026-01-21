@@ -22,7 +22,6 @@ gem 'devise'
 gem 'ckeditor', '4.3.0'
 gem 'kaminari'
 gem 'rack', '~> 2.0.9'
-gem 'recaptcha', require: 'recaptcha/rails'
 
 #Front end
 gem 'coffee-rails', '~> 4.2'
