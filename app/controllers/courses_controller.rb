@@ -15,7 +15,7 @@ class CoursesController < ApplicationController
     end
   }
 
-  expose :course, -> { Post.find(params[:id]) }
+  expose :course, -> { Post.friendly.find(params[:id]) }
 
   def index; end
 
