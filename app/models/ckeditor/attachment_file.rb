@@ -1,8 +1,8 @@
 class Ckeditor::AttachmentFile < Ckeditor::Asset
-  has_attached_file :data,
-                     storage: :ftp,
-                     path: '/post_assets/attachments/:id/:filename',
-                     url: '/post_assets/attachments/:id/:filename',
+   has_attached_file :data,
+                      storage: :ftp,
+                      path: '/post_assets/attachments/:id/:filename',
+                      url: ':host/post_assets/attachments/:id/:filename',
                      ftp_servers: [
                        {
                          host: ENV['FTP_HOST'] || 'ftp.example.com',

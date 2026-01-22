@@ -24,5 +24,15 @@ module TodoCalderas
     # Manually include essential ckeditor assets for precompile
     config.assets.precompile += %w(ckeditor/ckeditor.js ckeditor/config.js)
 
+    # Paperclip host configuration
+    if ENV['FTP_FILES_URL'].present?
+      Paperclip::Attachment.default_options[:host] = ENV['FTP_FILES_URL']
+    end
+
+    # Ensure :host interpolation
+    Paperclip.interpolates :host do |attachment, style|
+      attachment.options[:host] || ""
+    end
+
   end
 end

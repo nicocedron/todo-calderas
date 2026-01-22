@@ -1,8 +1,8 @@
 class Ckeditor::Picture < Ckeditor::Asset
-  has_attached_file :data,
-                     storage: :ftp,
-                     path: '/post_assets/pictures/:id/:style_:basename.:extension',
-                     url: '/post_assets/pictures/:id/:style_:basename.:extension',
+   has_attached_file :data,
+                      storage: :ftp,
+                      path: '/post_assets/pictures/:id/:style_:basename.:extension',
+                      url: ':host/post_assets/pictures/:id/:style_:basename.:extension',
                      styles: { content: '800>', thumb: '118x100#' },
                      ftp_servers: [
                        {

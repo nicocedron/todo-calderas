@@ -1,11 +1,11 @@
 class Slide < ApplicationRecord
   scope :ordered, -> { order(position: :asc) }
 
-  has_attached_file :image,
-                     storage: :ftp,
-                     default_url: "/img/slider/:style/missing.jpg",
-                     path: '/img/slider/:id/:style/:basename.:extension',
-                     url: '/img/slider/:id/:style/:basename.:extension',
+   has_attached_file :image,
+                      storage: :ftp,
+                      default_url: "/img/slider/:style/missing.jpg",
+                      path: '/img/slider/:id/:style/:basename.:extension',
+                      url: ':host/img/slider/:id/:style/:basename.:extension',
                      styles: {
                        desktop: ['1200x400>', :jpg],
                        tablet:  ['720x400>',  :jpg],
