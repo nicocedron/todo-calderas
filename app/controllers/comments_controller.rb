@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.friendly.find(params[:article_id] || params[:course_id])
-    @comment = @post.comments.new(comment_params)
+    @comment = @post.comments.build(comment_params)
 
     if verify_recaptcha(model: @comment) && @comment.save
       redirect_to_back_or_post(@post, notice: 'Comentario enviado exitosamente.')
