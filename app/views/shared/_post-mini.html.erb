@@ -1,4 +1,4 @@
-<a href="<%= path_method ? send(path_method, post.slug) : article_path(post.slug) %>" class="post-mini">
+<a href="<%= local_assigns[:path_method] ? send(local_assigns[:path_method], post.slug) : article_path(post.slug) %>" class="post-mini">
   <div class="background" style="background-image: url('<%= post.cover.url(:mobile) %>')"></div>
   <div class="content">
     <div class="title">

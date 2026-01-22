@@ -30,7 +30,7 @@ ENV SECRET_KEY_BASE dummy-key-for-build
 # Precompile assets
 RUN bundle exec rake assets:precompile
 
-# Expose port 3000
+EXPOSE 3000
 
 # Start the Rails server
 CMD ["rails", "server", "-b", "0.0.0.0"]
