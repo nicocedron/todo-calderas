@@ -1,0 +1,6 @@
+<div class="container padding-base">
+  <h1><%= course.title %></h1>
+  <%= course.body.html_safe %>
+
+  <%= render 'comments', course: course %>
+</div>

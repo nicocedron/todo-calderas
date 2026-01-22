@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   #Web
   resources :articles, only: [:index, :show], path: I18n.t('routes.articles.path')
-  resources :courses, only: [:index], path: I18n.t('routes.courses.path')
-  resources :comments, only: [:create, :destroy]
+  resources :courses, only: [:index, :show], path: I18n.t('routes.courses.path') do
+    resources :comments, only: [:create, :destroy]
+  end
   root 'home#index'
 
 end

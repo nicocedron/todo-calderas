@@ -18,6 +18,7 @@ class Post < ApplicationRecord
                     }
 
   has_and_belongs_to_many :categories
+  has_many :comments, dependent: :destroy
 
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
   validates :categories, :title, :body, :description, presence: true

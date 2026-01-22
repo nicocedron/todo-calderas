@@ -1,8 +1,8 @@
 <div class="l-comments">
-  <h2>Comentarios</h2>
+  <h2>Comentarios del Curso</h2>
 
   <div class="comments-list">
-    <% Comment.all.each do |comment| %>
+    <% course.comments.each do |comment| %>
       <div class="comment">
         <div class="comment-header">
           <div class="avatar">
@@ -16,7 +16,7 @@
 
           <% if admin_signed_in? %>
             <%= link_to 'Eliminar',
-                        comment_path(comment),
+                        course_comment_path(course, comment),
                         method: :delete,
                         data: { confirm: '¿Eliminar comentario?' },
                         class: 'delete-link' %>
@@ -31,7 +31,7 @@
   <h3>Dejá tu comentario</h3>
 
   <div class="comment-form">
-    <%= form_for Comment.new, url: comments_path do |f| %>
+    <%= form_for [course, Comment.new], url: course_comments_path(course) do |f| %>
 
       <div class="form-group">
         <%= f.label :name, 'Nombre' %>
