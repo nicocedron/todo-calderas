@@ -9,7 +9,7 @@
   <div class="row">
     <% posts.each do |post| %>
       <div class="col-50">
-        <%= render 'shared/post-mini', post: post %>
+        <%= render 'shared/post-mini', post: post, path_method: :course_path %>
       </div>
     <% end %>
   </div>
