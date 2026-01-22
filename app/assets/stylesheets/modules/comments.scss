@@ -1,3 +1,4 @@
+// _comments.scss
 .l-comments {
   max-width: 900px;
   margin: 60px auto;
@@ -9,6 +10,17 @@
     font-weight: 700;
     margin-bottom: 40px;
     color: #1f2937;
+    position: relative;
+    
+    &:after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #10b981, #22c55e);
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
   }
 
   h3 {
@@ -19,153 +31,297 @@
   }
 }
 
-/* LISTADO */
+/* LISTADO DE COMENTARIOS - MEJORADO */
 .comments-list {
   display: grid;
-  gap: 24px;
+  gap: 20px;
 }
 
-/* CARD */
+/* CARD DE COMENTARIO - MÁS COMPACTO */
 .comment {
   background: #ffffff;
-  border-radius: 18px;
-  padding: 24px 26px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  transition: all 0.25s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+  max-height: none; /* Permite que se expanda según contenido */
 
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #e0e0e0;
+  }
+
+  /* Línea decorativa a la izquierda */
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background: linear-gradient(to bottom, #10b981, #22c55e);
+    border-radius: 5px 0 0 5px;
   }
 
   p {
     margin: 0;
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.6;
     color: #374151;
+    padding-top: 8px;
+    padding-left: 10px;
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: normal;
   }
 }
 
-/* HEADER */
+/* HEADER MÁS COMPACTO */
 .comment-header {
   display: flex;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
   gap: 14px;
 }
 
-/* AVATAR */
+/* AVATAR MÁS PEQUEÑO */
 .avatar {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   background: linear-gradient(135deg, #10b981, #22c55e);
   color: #fff;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(16, 185, 129, 0.2);
 }
 
-/* AUTOR */
+/* AUTOR MÁS COMPACTO */
 .author {
   flex: 1;
+  min-width: 0; /* Previene que se expanda demasiado */
 
   h4 {
-    margin: 0;
-    font-size: 1.05rem;
+    margin: 0 0 4px 0;
+    font-size: 1rem;
     color: #111827;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   span {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #6b7280;
+    display: block;
   }
 }
 
-/* DELETE */
+/* BOTÓN VER MÁS - MÁS COMPACTO */
+.ver-mas-container {
+  text-align: center;
+  margin: 30px 0 40px;
+}
+
+.ver-mas-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+  min-width: 160px;
+  max-width: 100%;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+    background: linear-gradient(135deg, #16a34a, #0d9c40);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  i {
+    font-size: 0.9rem;
+  }
+}
+
+/* DELETE LINK MÁS PEQUEÑO */
 .delete-link {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: #ef4444;
   text-decoration: none;
   font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #fef2f2;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 
   &:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    background: #fee2e2;
   }
 }
 
-/* FORM */
+/* FORMULARIO - MÁS COMPACTO */
 .comment-form {
   background: #ffffff;
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f0f0f0;
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 
   label {
     display: block;
     margin-bottom: 6px;
     font-weight: 600;
     color: #374151;
+    font-size: 0.95rem;
   }
 
   .form-control {
     width: 100%;
-    padding: 12px 14px;
-    border-radius: 12px;
+    padding: 11px 14px;
+    border-radius: 10px;
     border: 1px solid #d1d5db;
     font-size: 1rem;
     transition: all 0.2s ease;
+    background: #f8fafc;
 
     &:focus {
       outline: none;
       border-color: #22c55e;
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+      background: #ffffff;
     }
   }
 
   textarea {
-    min-height: 120px;
+    min-height: 100px;
     resize: vertical;
+    max-height: 200px;
   }
 }
 
-/* BOTÓN */
+/* BOTÓN ENVIAR - MÁS COMPACTO */
 .button {
   width: 100%;
-  padding: 14px;
-  border-radius: 14px;
+  padding: 13px;
+  border-radius: 12px;
   border: none;
   background: linear-gradient(135deg, #22c55e, #16a34a);
   color: #ffffff;
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.25s ease;
+  margin-top: 10px;
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 30px rgba(34, 197, 94, 0.35);
+    box-shadow: 0 10px 25px rgba(34, 197, 94, 0.3);
   }
 }
 
 /* RECAPTCHA */
 .recaptcha-container {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
 }
 
-/* MOBILE */
+/* RESPONSIVE PARA MÓVILES */
 @media (max-width: 640px) {
+  .l-comments {
+    margin: 40px auto;
+    padding: 0 15px;
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+    
+    h3 {
+      margin: 40px 0 20px;
+      font-size: 1.4rem;
+    }
+  }
+
   .comment {
-    padding: 20px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    
+    &:before {
+      width: 4px;
+    }
+  }
+
+  .avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 0.95rem;
+  }
+
+  .author h4 {
+    font-size: 0.95rem;
   }
 
   .comment-form {
-    padding: 24px;
+    padding: 22px;
   }
+
+  .ver-mas-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    min-width: 140px;
+  }
+}
+
+/* ANIMACIÓN PARA NUEVOS COMENTARIOS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.comment.new-comment {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* CONTENEDOR PARA LIMITAR ALTURA MÁXIMA */
+.comment-content {
+  max-height: none; /* No limitamos la altura */
+  overflow: visible;
 }
