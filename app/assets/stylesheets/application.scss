@@ -1,3 +1,5 @@
+// application.scss o tu archivo principal
+
 @import 'theme/vars';
 @import 'theme/rem';
 @import 'theme/breakpoint';
@@ -21,6 +23,8 @@
 @import 'modules/post-body';
 @import 'modules/footer';
 
-/* Layots */
-@import 'layouts/l-posts';
+/* AQUÍ AGREGA EL NUEVO MÓDULO */
+@import 'modules/comments';
 
+/* Layouts */
+@import 'layouts/l-posts';
