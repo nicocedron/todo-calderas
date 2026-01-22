@@ -2,5 +2,5 @@
   <h1><%= course.title %></h1>
   <%= course.body.html_safe %>
 
-  <%= render 'comments', course: course %>
+  <%= render 'comments/comments', post: course %>
 </div>
