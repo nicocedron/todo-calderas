@@ -23,6 +23,8 @@ RUN bundle install
 # Copy the rest of the application code
 COPY . .
 
+RUN cp config/database.example.yml config/database.yml
+
 # Precompile assets (if needed)
 RUN bundle exec rake assets:precompile
 
