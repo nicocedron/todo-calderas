@@ -93,19 +93,33 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  #config.paperclip_defaults = {
+  #  storage: :s3,
+  #  url: ':s3_alias_url',
+  #  path: '/:class/:attachment/:id_partition/:style/:filename',
+  #  s3_host_alias: ENV.fetch('S3_HOST_NAME'),
+  #  s3_protocol: ENV.fetch('S3_PROTOCOL').to_sym,
+  #  s3_headers: { 'Cache-Control' => 'max-age=31536000' },
+  #  s3_credentials: {
+  #    bucket: ENV.fetch('S3_BUCKET_NAME'),
+  #    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+  #    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+  #    s3_region: ENV.fetch('AWS_REGION'),
+  #  }
+  #}
+
+  
   config.paperclip_defaults = {
-    storage: :s3,
-    url: ':s3_alias_url',
-    path: '/:class/:attachment/:id_partition/:style/:filename',
-    s3_host_alias: ENV.fetch('S3_HOST_NAME'),
-    s3_protocol: ENV.fetch('S3_PROTOCOL').to_sym,
-    s3_headers: { 'Cache-Control' => 'max-age=31536000' },
-    s3_credentials: {
-      bucket: ENV.fetch('S3_BUCKET_NAME'),
-      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-      s3_region: ENV.fetch('AWS_REGION'),
-    }
+    storage: :ftp,
+    ftp_credentials: {
+      host: ENV.fetch('FTP_HOST'),
+      username: ENV.fetch('FTP_USER'),
+      password: ENV.fetch('FTP_PASSWORD'),
+      port: 21,
+      passive: true
+    },
+    ftp_path: '/public_html/img/:class/:attachment/:id/:style/:filename',
+    ftp_url: "http://assets.todocalderas.ar/img/:class/:attachment/:id/:style/:filename"
   }
 
   # Do not dump schema after migrations.
