@@ -14,7 +14,6 @@ gem 'puma', '~> 3.7'
 # Plugins
 gem 'figaro', '1.1.1'
 gem 'paperclip', '5.1.0'
-gem 'fog', '~> 2.2.0'
 gem 'aws-sdk', '>=2.0.0'
 gem 'decent_exposure', '3.0.2'
 gem 'friendly_id', '5.2.3'
