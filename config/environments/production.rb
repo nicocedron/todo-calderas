@@ -109,18 +109,18 @@ Rails.application.configure do
   #}
 
   
-  #config.paperclip_defaults = {
-  #  storage: :ftp,
-  #  ftp_credentials: {
-  #    host: ENV.fetch('FTP_HOST'),
-  #    username: ENV.fetch('FTP_USER'),
-  #    password: ENV.fetch('FTP_PASSWORD'),
-  #    port: 21,
-  #    passive: true
-  #  },
-  #  ftp_path: '/public_html/img/:class/:attachment/:id/:style/:filename',
-  #  ftp_url: "http://assets.todocalderas.ar/img/:class/:attachment/:id/:style/:filename"
-  #}
+  config.paperclip_defaults = {
+    storage: :ftp,
+    ftp_credentials: {
+      host: ENV.fetch('FTP_HOST'),
+      username: ENV.fetch('FTP_USER'),
+      password: ENV.fetch('FTP_PASSWORD'),
+      port: 21,
+      passive: true
+    },
+    ftp_path: '/img/:class/:attachment/:id/:style/:filename',
+    ftp_url: "http://assets.todocalderas.ar/img/:class/:attachment/:id/:style/:filename"
+  }
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
